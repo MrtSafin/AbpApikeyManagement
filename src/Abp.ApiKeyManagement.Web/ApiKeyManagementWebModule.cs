@@ -7,7 +7,7 @@ using Abp.ApiKeyManagement.Web.Pages.ApiKeyManagement;
 using Volo.Abp.AspNetCore.Mvc.Localization;
 using Volo.Abp.AspNetCore.Mvc.UI.Theme.Shared;
 using Volo.Abp.AspNetCore.Mvc.UI.Theme.Shared.PageToolbars;
-using Volo.Abp.AutoMapper;
+using Volo.Abp.Mapperly;
 using Volo.Abp.Localization;
 using Volo.Abp.Modularity;
 using Volo.Abp.UI.Navigation;
@@ -18,7 +18,7 @@ namespace Abp.ApiKeyManagement.Web;
 [DependsOn(
     typeof(ApiKeyManagementApplicationContractsModule),
     typeof(AbpAspNetCoreMvcUiThemeSharedModule),
-    typeof(AbpAutoMapperModule),
+    typeof(AbpMapperlyModule),
     typeof(AbpApiKeyManagementAspNetCoreModule)
     )]
 public class ApiKeyManagementWebModule : AbpModule
@@ -48,11 +48,7 @@ public class ApiKeyManagementWebModule : AbpModule
             options.FileSets.AddEmbedded<ApiKeyManagementWebModule>();
         });
 
-        context.Services.AddAutoMapperObjectMapper<ApiKeyManagementWebModule>();
-        Configure<AbpAutoMapperOptions>(options =>
-        {
-            options.AddMaps<ApiKeyManagementWebModule>(validate: true);
-        });
+        context.Services.AddMapperlyObjectMapper<ApiKeyManagementWebModule>();
         
         Configure<AbpPageToolbarOptions>(options =>
         {

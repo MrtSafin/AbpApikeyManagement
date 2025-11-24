@@ -29,9 +29,36 @@ public class PermissionAppService : ApplicationService, IPermissionAppService
 
     public async Task<GetPermissionListResultDto> GetAsync(string providerName, string providerKey)
     {
+        return await GetInternalAsync(null, providerName, providerKey);
+    }
+
+    public async Task<GetPermissionListResultDto> GetByGroupAsync(string groupName, string providerName, string providerKey)
+    {
+        return await GetInternalAsync(groupName, providerName, providerKey);
+    }
+
+    public async Task UpdateAsync(string providerName, string providerKey, UpdatePermissionsDto input)
+    {
+        await CheckProviderPolicy(providerName, providerKey);
+        await InnerService.UpdateAsync(providerName, providerKey, input);
+    }
+
+    protected virtual async Task CheckProviderPolicy(string providerName, string providerKey)
+    {
+        var policyName = Options.ProviderPolicies.GetOrDefault(providerName);
+        if (policyName.IsNullOrEmpty())
+        {
+            throw new AbpException($"No policy defined to get/set permissions for the provider '{providerName}'. Use {nameof(PermissionManagementOptions)} to map the policy.");
+        }
+
+        await AuthorizationService.CheckAsync(providerKey, policyName);
+    }
+
+    protected virtual async Task<GetPermissionListResultDto> GetInternalAsync(string groupName, string providerName, string providerKey)
+    {
         await CheckProviderPolicy(providerName, providerKey);
         
-        var result = await InnerService.GetAsync(providerName, providerKey);
+        var result = await InnerService.GetByGroupAsync(groupName, providerName, providerKey);
         if(providerName != ApiKeyPermissionValueProvider.ProviderName || !Guid.TryParse(providerKey, out var id))
         {
             return result;
@@ -43,7 +70,7 @@ public class PermissionAppService : ApplicationService, IPermissionAppService
             return result;
         }
         
-        var userPermissions = await InnerService.GetAsync(UserPermissionValueProvider.ProviderName, apiKey.UserId.ToString());
+        var userPermissions = await InnerService.GetByGroupAsync(groupName, UserPermissionValueProvider.ProviderName, apiKey.UserId.ToString());
         
         var deletedGroups = new List<PermissionGroupDto>();
         foreach (var permission in result.Groups)
@@ -75,22 +102,5 @@ public class PermissionAppService : ApplicationService, IPermissionAppService
         result.Groups.RemoveAll(g => deletedGroups.Contains(g));
         
         return result;
-    }
-
-    public async Task UpdateAsync(string providerName, string providerKey, UpdatePermissionsDto input)
-    {
-        await CheckProviderPolicy(providerName, providerKey);
-        await InnerService.UpdateAsync(providerName, providerKey, input);
-    }
-
-    protected virtual async Task CheckProviderPolicy(string providerName, string providerKey)
-    {
-        var policyName = Options.ProviderPolicies.GetOrDefault(providerName);
-        if (policyName.IsNullOrEmpty())
-        {
-            throw new AbpException($"No policy defined to get/set permissions for the provider '{providerName}'. Use {nameof(PermissionManagementOptions)} to map the policy.");
-        }
-
-        await AuthorizationService.CheckAsync(providerKey, policyName);
     }
 }

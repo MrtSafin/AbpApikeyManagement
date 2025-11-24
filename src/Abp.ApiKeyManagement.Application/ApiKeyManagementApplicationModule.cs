@@ -1,6 +1,6 @@
 ﻿using System.Linq;
 using Microsoft.Extensions.DependencyInjection;
-using Volo.Abp.AutoMapper;
+using Volo.Abp.Mapperly;
 using Volo.Abp.Modularity;
 using Volo.Abp.Application;
 using Volo.Abp.DependencyInjection;
@@ -12,18 +12,14 @@ namespace Abp.ApiKeyManagement;
     typeof(ApiKeyManagementDomainModule),
     typeof(ApiKeyManagementApplicationContractsModule),
     typeof(AbpDddApplicationModule),
-    typeof(AbpAutoMapperModule),
+    typeof(AbpMapperlyModule),
     typeof(AbpPermissionManagementApplicationModule)
     )]
 public class ApiKeyManagementApplicationModule : AbpModule
 {
     public override void ConfigureServices(ServiceConfigurationContext context)
     {
-        context.Services.AddAutoMapperObjectMapper<ApiKeyManagementApplicationModule>();
-        Configure<AbpAutoMapperOptions>(options =>
-        {
-            options.AddMaps<ApiKeyManagementApplicationModule>(validate: true);
-        });
+        context.Services.AddMapperlyObjectMapper<ApiKeyManagementApplicationModule>();
         
         var descriptor = context.Services.First(sd => sd.ServiceType == typeof(IPermissionAppService) && sd.ServiceKey == null);
         

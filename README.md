@@ -16,7 +16,7 @@ This module provides user-based API Key management for ABP Framework application
 
 ## 📋 Requirements
 
-- ABP Framework 9.0+
+- ABP Framework 10.0+
 - Entity Framework Core or MongoDB
 - Distributed Cache (for performance)
 

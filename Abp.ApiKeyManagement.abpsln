@@ -1,0 +1,13 @@
+{
+  "id": "fcac4b6d-6d17-4c0c-850e-4585a3dca764",
+  "template": "empty",
+  "modules": {
+    "Abp.ApiKeyManagement": {
+      "path": "Abp.ApiKeyManagement.abpmdl"
+    }
+  },
+  "versions": {
+    "AbpFramework": "10.0.0",
+    "AbpCommercial": "10.0.0"
+  }
+}

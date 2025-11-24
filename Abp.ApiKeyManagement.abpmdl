@@ -6,6 +6,14 @@
     }
   },
   "packages": {
+    "Abp.ApiKeyManagement.Installer": {
+      "path": "src/Abp.ApiKeyManagement.Installer/Abp.ApiKeyManagement.Installer.abppkg",
+      "folder": "src"
+    },
+    "Abp.ApiKeyManagement.Domain.Shared": {
+      "path": "src/Abp.ApiKeyManagement.Domain.Shared/Abp.ApiKeyManagement.Domain.Shared.abppkg",
+      "folder": "src"
+    },
     "Abp.ApiKeyManagement.Domain": {
       "path": "src/Abp.ApiKeyManagement.Domain/Abp.ApiKeyManagement.Domain.abppkg",
       "folder": "src"
@@ -34,10 +42,6 @@
       "path": "src/Abp.ApiKeyManagement.HttpApi.Client/Abp.ApiKeyManagement.HttpApi.Client.abppkg",
       "folder": "src"
     },
-    "Abp.ApiKeyManagement.Web": {
-      "path": "src/Abp.ApiKeyManagement.Web/Abp.ApiKeyManagement.Web.abppkg",
-      "folder": "src"
-    },
     "Abp.ApiKeyManagement.TestBase": {
       "path": "test/Abp.ApiKeyManagement.TestBase/Abp.ApiKeyManagement.TestBase.abppkg",
       "folder": "test"
@@ -58,12 +62,8 @@
       "path": "test/Abp.ApiKeyManagement.Application.Tests/Abp.ApiKeyManagement.Application.Tests.abppkg",
       "folder": "test"
     },
-    "Abp.ApiKeyManagement.Domain.Shared": {
-      "path": "src/Abp.ApiKeyManagement.Domain.Shared/Abp.ApiKeyManagement.Domain.Shared.abppkg",
-      "folder": "src"
-    },
-    "Abp.ApiKeyManagement.Installer": {
-      "path": "src/Abp.ApiKeyManagement.Installer/Abp.ApiKeyManagement.Installer.abppkg",
+    "Abp.ApiKeyManagement.Web": {
+      "path": "src/Abp.ApiKeyManagement.Web/Abp.ApiKeyManagement.Web.abppkg",
       "folder": "src"
     },
     "Abp.ApiKeyManagement.AspNetCore": {
