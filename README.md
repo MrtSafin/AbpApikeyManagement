@@ -20,7 +20,10 @@ This module provides user-based API Key management for ABP Framework application
 - Entity Framework Core or MongoDB
 - Distributed Cache (for performance)
 
-## 🔧 Installation
+## 🔧 Installation With Abp Studio
+https://github.com/salihozkara/AbpApikeyManagement/issues/1#issuecomment-3575790623
+
+## 🔧 Installation Manuel
 
 ### 1. Project References
 
