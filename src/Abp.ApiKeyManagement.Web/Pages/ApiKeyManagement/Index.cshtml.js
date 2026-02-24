@@ -11,9 +11,9 @@
         viewUrl: abp.appPath + 'ApiKeyManagement/CreateModal'
     });
 
-    var _permissionsModal = new abp.ModalManager(
-        abp.appPath + 'AbpPermissionManagement/PermissionManagementModal'
-    );
+    var _permissionsModal = new abp.ModalManager({
+        viewUrl: abp.appPath + 'AbpPermissionManagement/PermissionManagementModal'
+    });
 
     var _dataTable = null;
 
@@ -88,9 +88,9 @@
                         data: 'isActive',
                         render: function (data, type, row) {
                             if (!row.isActive) {
-                                return  'Disabled';
+                                return  l('Disabled');
                             }else{
-                                return  'Active';
+                                return  l('Active');
                             }
                         }
                     },

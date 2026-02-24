@@ -2,6 +2,25 @@
   "culture": "ru",
   "texts": {
     "MyAccount": "Мой аккаунт",
-    "SamplePageMessage": "Пример страницы для модуля ApiKeyManagement"
+    "SamplePageMessage": "Пример страницы для модуля ApiKeyManagement",
+
+    "ApiKeyManagement": "Api Ключи",
+    "ApiKeys": "Api Ключи",
+    "EditApiKey": "Данные ключа",
+    "Permissions": "Разрешения",
+    "NewApiKey": "Новый api ключ",
+
+    "Name": "Имя",
+    "Description": "Описание",
+    "Key": "Ключ",
+    "Active": "Действителен",
+    "ExpirationTime": "Действителен до",
+    "CreationTime": "Создан",
+    "Disabled": "Отозван",
+
+    "ApiKeyCreated": "Api ключ создан",
+    "ApiKey": "Api Ключ",
+    "Success": "Успех",
+    "ApiKeyCopied": "Api ключ скопирован в буфер обмена"
   }
 }
