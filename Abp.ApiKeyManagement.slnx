@@ -1,0 +1,27 @@
+<Solution>
+  <Configurations>
+    <Platform Name="Any CPU" />
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Folder Name="/src/">
+    <Project Path="src/Abp.ApiKeyManagement.Application.Contracts/Abp.ApiKeyManagement.Application.Contracts.csproj" />
+    <Project Path="src/Abp.ApiKeyManagement.Application/Abp.ApiKeyManagement.Application.csproj" />
+    <Project Path="src/Abp.ApiKeyManagement.AspNetCore/Abp.ApiKeyManagement.AspNetCore.csproj" />
+    <Project Path="src/Abp.ApiKeyManagement.Domain.Shared/Abp.ApiKeyManagement.Domain.Shared.csproj" />
+    <Project Path="src/Abp.ApiKeyManagement.Domain/Abp.ApiKeyManagement.Domain.csproj" />
+    <Project Path="src/Abp.ApiKeyManagement.EntityFrameworkCore/Abp.ApiKeyManagement.EntityFrameworkCore.csproj" />
+    <Project Path="src/Abp.ApiKeyManagement.HttpApi.Client/Abp.ApiKeyManagement.HttpApi.Client.csproj" />
+    <Project Path="src/Abp.ApiKeyManagement.HttpApi/Abp.ApiKeyManagement.HttpApi.csproj" />
+    <Project Path="src/Abp.ApiKeyManagement.Installer/Abp.ApiKeyManagement.Installer.csproj" />
+    <Project Path="src/Abp.ApiKeyManagement.MongoDB/Abp.ApiKeyManagement.MongoDB.csproj" />
+    <Project Path="src/Abp.ApiKeyManagement.Web/Abp.ApiKeyManagement.Web.csproj" />
+  </Folder>
+  <Folder Name="/test/">
+    <Project Path="test/Abp.ApiKeyManagement.Application.Tests/Abp.ApiKeyManagement.Application.Tests.csproj" />
+    <Project Path="test/Abp.ApiKeyManagement.Domain.Tests/Abp.ApiKeyManagement.Domain.Tests.csproj" />
+    <Project Path="test/Abp.ApiKeyManagement.EntityFrameworkCore.Tests/Abp.ApiKeyManagement.EntityFrameworkCore.Tests.csproj" />
+    <Project Path="test/Abp.ApiKeyManagement.MongoDB.Tests/Abp.ApiKeyManagement.MongoDB.Tests.csproj" />
+    <Project Path="test/Abp.ApiKeyManagement.TestBase/Abp.ApiKeyManagement.TestBase.csproj" />
+  </Folder>
+</Solution>

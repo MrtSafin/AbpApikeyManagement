@@ -11,7 +11,14 @@
   <ItemGroup>
     <ProjectReference Include="..\..\src\Abp.ApiKeyManagement.Application\Abp.ApiKeyManagement.Application.csproj" />
     <ProjectReference Include="..\Abp.ApiKeyManagement.Domain.Tests\Abp.ApiKeyManagement.Domain.Tests.csproj" />
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.13.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="18.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Update="ConfigureAwait.Fody" Version="3.3.2" />
+    <PackageReference Update="Fody" Version="6.9.3">
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
   </ItemGroup>
 
 </Project>

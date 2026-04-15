@@ -9,13 +9,20 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Volo.Abp.Http.Client" Version="10.0.0" />
+    <PackageReference Include="Volo.Abp.Http.Client" Version="10.2.1" />
     <ProjectReference Include="..\Abp.ApiKeyManagement.Application.Contracts\Abp.ApiKeyManagement.Application.Contracts.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="**\*generate-proxy.json" />
     <Content Remove="**\*generate-proxy.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Update="ConfigureAwait.Fody" Version="3.3.2" />
+    <PackageReference Update="Fody" Version="6.9.3">
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
   </ItemGroup>
 
 </Project>
