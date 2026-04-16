@@ -12,6 +12,7 @@ using Volo.Abp.Localization;
 using Volo.Abp.Modularity;
 using Volo.Abp.UI.Navigation;
 using Volo.Abp.VirtualFileSystem;
+using Volo.Abp.PermissionManagement.Web;
 
 namespace Abp.ApiKeyManagement.Web;
 
@@ -19,7 +20,8 @@ namespace Abp.ApiKeyManagement.Web;
     typeof(ApiKeyManagementApplicationContractsModule),
     typeof(AbpAspNetCoreMvcUiThemeSharedModule),
     typeof(AbpMapperlyModule),
-    typeof(AbpApiKeyManagementAspNetCoreModule)
+    typeof(AbpApiKeyManagementAspNetCoreModule),
+    typeof(AbpPermissionManagementWebModule)
     )]
 public class ApiKeyManagementWebModule : AbpModule
 {
